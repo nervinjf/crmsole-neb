@@ -8,7 +8,6 @@ export const getFormSlice = createSlice({
         getRegistros: (state, action) => {
             
             const registros = action.payload
-            console.log(registros)
             return registros
         }
     }

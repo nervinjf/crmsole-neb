@@ -7,11 +7,25 @@ const Home = () => {
 
     const dispatch = useDispatch();
     const get = useSelector(state => state.getform)
+    const [ total, setTotal ] = useState();
 
     useEffect(() => {
         dispatch(getRegistrosThunk())
     }, [])
 
+    useEffect(() => {
+        let numero = "hola";
+        let newTotal = [];
+        const test = get.data?.forEach(items => {
+            if(items.efectiva === "No Interesado"){
+                newTotal.push(items.efectiva.length)
+            }
+            
+        });
+        setTotal(newTotal)
+      }, [get])
+
+    //   console.log(total)
     return (
         <div className='container-home'>
             <h1>Dashboard</h1>
@@ -20,7 +34,10 @@ const Home = () => {
                     <h2>Registros:</h2>
                     <h2>{get.data?.length}</h2>
                 </div>
-                
+                <div className='register-cant'>
+                    <h2>Efectivas:</h2>
+                    <h2>{total?.length}</h2>
+                </div>                
 
             </div>
         </div>
