@@ -1,3 +1,5 @@
+
+
 .table-register{
   margin: 25px 45px;
   width: 1200px;
@@ -23,4 +25,45 @@ form{
 form button{
   display: flex;
   justify-content: flex-end;
+}
+
+.container-home{
+  padding: 50px 50px;
+  height: 786px;
+  background: rgba(0 , 0, 0, 0.06);
+}
+
+.container-home h1{
+  width: 500px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18) ;
+}
+
+.container-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 15px 0;
+}
+
+.register-cant{
+  width: 200px;
+  border-radius: 10px;
+  background: white;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.register-cant h2{
+  font-size: 35px;
+}
+
+.register-cant p{
+  width: 200px;
+  border-radius: 10px;
+  background: violet;
+  display: flex;
+  justify-content: center;
 }

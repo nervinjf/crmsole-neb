@@ -14,6 +14,7 @@ function App() {
  
 
   return (
+    <div className='body'>
    <HashRouter>
     <Navbarn/>
     <Routes>
@@ -22,6 +23,7 @@ function App() {
       <Route path='/registros' element={<Registros />}/>
     </Routes>
    </HashRouter>
+   </div>
   )
 }
 

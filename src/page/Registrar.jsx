@@ -24,7 +24,7 @@ const registrar = () => {
 
     return (
         <div className='contain-Form'>
-            <h1>Registar</h1>
+            <h1>Registrar</h1>
             <form onSubmit={handleSubmit(registrarDatos)}>
                 <label htmlFor="nombre">Nombre Cliente</label>
                 <input type="text" {...register("nombre")}/>
