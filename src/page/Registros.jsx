@@ -2,19 +2,18 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux/es/exports';
-import { getRegistros } from '../store/slice/getForm.slice';
+import { getRegistros, getRegistrosThunk } from '../store/slice/getForm.slice';
 import axios from 'axios';
 
 const Registros = () => {
 
-    const [ get, setGet ] = useState([]);
+    // const [ get, setGet ] = useState([]);
 
     const dispatch = useDispatch();
-    const gettt = useSelector(state => state.getform)
+    const get = useSelector(state => state.getform)
 
     useEffect(() => {
-        axios.get('https://api-res-sole-nebconnection2.herokuapp.com/api/register')
-            .then(res => setGet(res));
+        dispatch(getRegistrosThunk())
     }, [])
 
     return (
