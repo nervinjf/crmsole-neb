@@ -1,0 +1,26 @@
+.table-register{
+  margin: 25px 45px;
+  width: 1200px;
+  overflow-y: scroll;
+}
+
+.contain-Form{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 786px;
+  width: 100%;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 20% 30% 20% 30%;
+  gap: 15px;
+  margin: 0;
+  position: relative;
+}
+
+form button{
+  display: flex;
+  justify-content: flex-end;
+}
