@@ -64,7 +64,107 @@ form button{
 .register-cant p{
   width: 200px;
   border-radius: 10px;
-  background: violet;
   display: flex;
   justify-content: center;
+}
+
+.register-cant-efectiva{
+  width: 200px;
+  border-radius: 10px;
+  background: white;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.register-cant-efectiva h2{
+  font-size: 35px;
+}
+
+.register-cant-efectiva p{
+  width: 200px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.container-DboardDetails{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0 , 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 0;
+  backdrop-filter: blur(2px);
+  visibility: hidden;
+  transition: .3s ease all;
+  opacity: 0%;
+}
+
+.DboardDetails{
+  position: absolute;
+  margin: auto auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: fit-content;
+  height: fit-content;
+  background: white;
+  border-radius: 15px;
+}
+
+.DboardDetails h2{
+  margin: 0 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18) ;
+  width: 300px;
+}
+
+.container-cancel{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 25px;
+  font-size: 25px;
+}
+
+.container-cancel i {
+  cursor: pointer;
+}
+
+.grid-details{
+  padding: 15px 25px;
+  height: 90%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-auto-rows: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px
+}
+
+.DboardDetails-items{
+  width: 320px;
+  height: 100px;
+  background: rgba(0 , 0, 0, 0.08);
+  border-radius: 5px;
+  padding: 5px  10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.DboardDetails-items p{
+  font-weight: 600;
+  font-size: 20px;
 }
