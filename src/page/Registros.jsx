@@ -16,6 +16,8 @@ const Registros = () => {
         dispatch(getRegistrosThunk())
     }, [])
 
+    console.log(get)
+
     return (
         <div className='table-register'>
         <Table striped bordered hover>
@@ -28,6 +30,7 @@ const Registros = () => {
                     <th>Dirección</th>
                     <th>Fecha</th>
                     <th>Fuente</th>
+                    <th>Status</th>
                     <th>Efectiva</th>
                     <th>No Efectivo</th>
                     <th>No Localizable</th>
@@ -56,6 +59,7 @@ const Registros = () => {
                             <th>{gett.direccion}</th>
                             <th>{gett.fechatime}</th>
                             <th>{gett.fuente}</th>
+                            <th>{gett.status}</th>
                             <th>{gett.efectiva}</th>
                             <th>{gett.noefectiva}</th>
                             <th>{gett.nolocalizable}</th>

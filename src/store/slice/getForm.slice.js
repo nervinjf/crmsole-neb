@@ -6,7 +6,6 @@ export const getFormSlice = createSlice({
     initialState: [],
     reducers: {
         getRegistros: (state, action) => {
-            
             const registros = action.payload
             return registros
         }

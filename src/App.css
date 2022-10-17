@@ -2,29 +2,132 @@
 
 .table-register{
   margin: 25px 45px;
-  width: 1200px;
+  width: auto;
+  height: 600px;
   overflow-y: scroll;
 }
 
 .contain-Form{
-  display: grid;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   height: 786px;
   width: 100%;
+  padding: 100px 0 0 50px;
 }
 
 form{
-  display: grid;
-  grid-template-columns: 20% 30% 20% 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 15px;
-  margin: 0;
-  position: relative;
+}
+
+.container-form-input{
+  display: flex;
+  justify-content: space-between;                                                     
+  align-items: center;
+  gap: 15px;
+}
+
+.container-form-input input{
+  width: 300px;
+  border: 1px solid rgba(0 , 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.container-form-input select{
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(0 , 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.container-form-input textarea{
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0 , 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.container-form-input label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-contac{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.form-contac-appoiment{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.form-contac-appoiment-hidden{
+  display: none;
+  transition: 4s ease-in;
+}
+
+.efectiva{
+  display: none;
+}
+
+.nefectiva{
+  display: none;
+}
+
+.nlocalizable{
+  display: none;
+}
+
+.form-contac-detail{
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 form button{
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  background: #212529;
+  color: white;
+  font-weight: 600;
+  transition: 0.5s ease-out  ;
+}
+
+form button:hover{
+  font-size: 20px;
+  color: #71dfbe;
+}
+
+form button:hover .btn-text-hidden{
+  display: none;
+}
+
+form button:hover .btn-i-hidden{
+  display: flex;
+}
+
+.btn-i-hidden{
+  display: none;
 }
 
 .container-home{
@@ -46,7 +149,7 @@ form button{
 }
 
 .register-cant{
-  width: 200px;
+  width: 230px;
   border-radius: 10px;
   background: white;
   padding: 0 10px;
@@ -68,21 +171,6 @@ form button{
   justify-content: center;
 }
 
-.register-cant-efectiva{
-  width: 200px;
-  border-radius: 10px;
-  background: white;
-  padding: 0 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.register-cant-efectiva h2{
-  font-size: 35px;
-}
 
 .register-cant-efectiva p{
   width: 200px;

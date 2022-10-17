@@ -7,6 +7,7 @@ const Home = () => {
 
     const dispatch = useDispatch();
     const get = useSelector(state => state.getform)
+    // ------------------------------efectiva-----------------------
     const [ totalEfectiva, setTotalEfectiva ] = useState();
     const [ totalCita, setTotalCita ] = useState();
     const [ totalNinteresado, setTotalNinteresado ] = useState();
@@ -18,8 +19,15 @@ const Home = () => {
     const [ totalSMS, setTotalSMS ] = useState();
     const [ totalRecordatorio, setTotalRecordatorio ] = useState();
     const [ totalCitaRe, setTotalCitaRe ] = useState();
+    // ----------------------------noefectiva------------------------
+    const [ totalNEfectiva, setTotalNEfectiva ] = useState();
+    const [ totalContestadora, setTotalContestadora ] = useState();
+    const [ totalNContesta, setTotalNContesta ] = useState();
+    const [ totalIVR, setTotalIVR ] = useState();
+    const [ totalVLllamar, setTotalVLllamar ] = useState();
 
-    const [ close, setClose ] = useState(false);
+    const [ closee, setClosee ] = useState(false);
+    const [ closen, setClosen ] = useState(false);
 
     useEffect(() => {
         dispatch(getRegistrosThunk())
@@ -34,6 +42,17 @@ const Home = () => {
             }
         });
         setTotalEfectiva(newTotal)
+      }, [get])
+
+      useEffect(() => {
+        let numero = "hola";
+        let newTotal = [];
+        const test = get.data?.forEach(items => {
+            if(items.noefectiva !== "None"){
+                newTotal.push(items.noefectiva.length)
+            }
+        });
+        setTotalNEfectiva(newTotal)
       }, [get])
 
       useEffect(() => {
@@ -146,8 +165,56 @@ const Home = () => {
         setTotalCitaRe(newTotal)
       }, [get])
 
-      const closeChange = () => {
-        setClose(!close)
+      useEffect(() => {
+        let newTotal = [];
+        const test = get.data?.forEach(items => {
+            if(items.noefectiva === "Contestadora"){
+                newTotal.push(items.noefectiva.length)
+            }
+            
+        });
+        setTotalContestadora(newTotal)
+      }, [get])
+
+      useEffect(() => {
+        let newTotal = [];
+        const test = get.data?.forEach(items => {
+            if(items.noefectiva === "No Contesta"){
+                newTotal.push(items.noefectiva.length)
+            }
+            
+        });
+        setTotalNContesta(newTotal)
+      }, [get])
+
+      useEffect(() => {
+        let newTotal = [];
+        const test = get.data?.forEach(items => {
+            if(items.noefectiva === "IVR"){
+                newTotal.push(items.noefectiva.length)
+            }
+            
+        });
+        setTotalIVR(newTotal)
+      }, [get])
+
+      useEffect(() => {
+        let newTotal = [];
+        const test = get.data?.forEach(items => {
+            if(items.noefectiva === "Volver a llamar"){
+                newTotal.push(items.noefectiva.length)
+            }
+            
+        });
+        setTotalVLllamar(newTotal)
+      }, [get])
+
+      const closeeChange = () => {
+        setClosee(!closee)
+      }
+
+      const closenChange = () => {
+        setClosen(!closen)
       }
 
       console.log(totalEfectiva)
@@ -160,18 +227,22 @@ const Home = () => {
                     <h2>Registros:</h2>
                     <h2>{get.data?.length}</h2>
                 </div>
-                <div className='register-cant-efectiva' onClick={closeChange} style={{cursor: "pointer"}}>
+                <div className='register-cant' onClick={closeeChange} style={{cursor: "pointer"}}>
                     <h2>Efectivas:</h2>
                     <h2>{totalEfectiva?.length}</h2>
-                </div>                
+                </div>   
+                <div className='register-cant' onClick={closenChange} style={{cursor: "pointer"}}>
+                    <h2>No efectivas:</h2>
+                    <h2>{totalNEfectiva?.length}</h2>
+                </div>              
 
             </div>
-            <div className='container-DboardDetails' style={close === true ? {visibility: "visible", opacity: "100%"} : {visibility: "hidden", opacity: "0%"}}>
+            <div className='container-DboardDetails' style={closee === true ? {visibility: "visible", opacity: "100%"} : {visibility: "hidden", opacity: "0%"}}>
                 <div className='DboardDetails'>
                     <div className='container-cancel'>
-                    <i class="fa-solid fa-xmark" onClick={closeChange}></i>
+                    <i class="fa-solid fa-xmark" onClick={closeeChange}></i>
                     </div>
-                    <h2>Detalle Efectiva</h2>
+                    <h2>Detalles Efectiva</h2>
                     <div className='grid-details'>
                         <div className='DboardDetails-items'>
                             <h3>Cita programada</h3>
@@ -214,6 +285,34 @@ const Home = () => {
                             <p>{totalCitaRe?.length}</p>
                         </div>
                         
+                    </div>
+
+
+                </div>
+            </div>
+            <div className='container-DboardDetails' style={closen === true ? {visibility: "visible", opacity: "100%"} : {visibility: "hidden", opacity: "0%"}}>
+                <div className='DboardDetails'>
+                    <div className='container-cancel'>
+                    <i class="fa-solid fa-xmark" onClick={closenChange}></i>
+                    </div>
+                    <h2>Detalles No efectiva</h2>
+                    <div className='grid-details'>
+                        <div className='DboardDetails-items'>
+                            <h3>Contestadora</h3>
+                            <p>{totalContestadora?.length}</p>
+                        </div>
+                        <div className='DboardDetails-items'>
+                            <h3>No contesta</h3>
+                            <p>{totalNContesta?.length}</p>
+                        </div>
+                        <div className='DboardDetails-items'>
+                            <h3>IVR</h3>
+                            <p>{totalIVR?.length}</p>
+                        </div>
+                        <div className='DboardDetails-items'>
+                            <h3>Volver a llamar</h3>
+                            <p>{totalVLllamar?.length}</p>
+                        </div>
                     </div>
 
 

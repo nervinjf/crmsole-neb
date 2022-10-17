@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import './style/button.css'
 import axios from 'axios';
 import Navbarn from './page/Navbarn'
 import { HashRouter, Routes, Route } from 'react-router-dom'
