@@ -234,7 +234,11 @@ const Home = () => {
                 <div className='register-cant' onClick={closenChange} style={{cursor: "pointer"}}>
                     <h2>No efectivas:</h2>
                     <h2>{totalNEfectiva?.length}</h2>
-                </div>              
+                </div>  
+                <div className='register-cant'>
+                    <h2>Citas programadas:</h2>
+                    <h2>{totalCita?.length}</h2>
+                </div>            
 
             </div>
             <div className='container-DboardDetails' style={closee === true ? {visibility: "visible", opacity: "100%"} : {visibility: "hidden", opacity: "0%"}}>
@@ -286,8 +290,6 @@ const Home = () => {
                         </div>
                         
                     </div>
-
-
                 </div>
             </div>
             <div className='container-DboardDetails' style={closen === true ? {visibility: "visible", opacity: "100%"} : {visibility: "hidden", opacity: "0%"}}>

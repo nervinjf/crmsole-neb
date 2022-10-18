@@ -143,13 +143,13 @@ form button:hover .btn-i-hidden{
 
 .container-grid{
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   padding: 15px 0;
-  gap: 35px;
+  gap: 25px;
 }
 
 .register-cant{
-  width: 230px;
+  width: max-content;
   border-radius: 10px;
   background: white;
   padding: 0 10px;

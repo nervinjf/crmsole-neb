@@ -16,7 +16,8 @@ const Registros = () => {
         dispatch(getRegistrosThunk())
     }, [])
 
-    console.log(get)
+    console.log(new Date(get.data?.fechatime).toString())
+
 
     return (
         <div className='table-register'>
@@ -57,7 +58,7 @@ const Registros = () => {
                             <th>{gett.telefono}</th>
                             <th>{gett.correo}</th>
                             <th>{gett.direccion}</th>
-                            <th>{gett.fechatime}</th>
+                            <th>{new Date(gett?.fechatime).toLocaleString('es-VE', { timeZone: 'UTC' })}</th>
                             <th>{gett.fuente}</th>
                             <th>{gett.status}</th>
                             <th>{gett.efectiva}</th>
@@ -65,7 +66,7 @@ const Registros = () => {
                             <th>{gett.nolocalizable}</th>
                             <th>{gett.operador}</th>
                             <th>{gett.intentos}</th>
-                            <th>{gett.appoimentdate}</th>
+                            <th>{new Date(gett?.appoimentdate).toLocaleString('es-VE', { timeZone: 'UTC' })}</th>
                             <th>{gett.selle}</th>
                             <th>{gett.claim}</th>
                             <th>{gett.claimnumber}</th>

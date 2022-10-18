@@ -170,7 +170,7 @@ const registrar = () => {
                         <div className='form-contac-appoiment'>
                             <div className='form-contac-detail'>
                                 <label htmlFor="appoimentdate">Appoiment Date</label>
-                                <input type="datetime-local" {...register("appoimentdate")} />
+                                <input type="datetime" value="0000-00-00T00:00:00" {...register("appoimentdate")} />
                             </div>
                             <div className='form-contac-detail'>
                                 <label htmlFor="selle">Selle</label>
